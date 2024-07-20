@@ -1,0 +1,179 @@
+﻿<!--
+      _____                   _______                   _____          
+     /\    \                 /::\    \                 /\    \         
+    /::\    \               /::::\    \               /::\____\        
+    \:::\    \             /::::::\    \             /::::|   |        
+     \:::\    \           /::::::::\    \           /:::::|   |        
+      \:::\    \         /:::/~~\:::\    \         /::::::|   |        
+       \:::\    \       /:::/    \:::\    \       /:::/|::|   |        
+       /::::\    \     /:::/    / \:::\    \     /:::/ |::|   |        
+      /::::::\    \   /:::/____/   \:::\____\   /:::/  |::|___|______  
+     /:::/\:::\    \ |:::|    |     |:::|    | /:::/   |::::::::\    \ 
+    /:::/  \:::\____\|:::|____|     |:::|____|/:::/    |:::::::::\____\
+   /:::/    \::/    / \:::\   _\___/:::/    / \::/    / ~~~~~/:::/    /
+  /:::/    / \/____/   \:::\ |::| /:::/    /   \/____/      /:::/    / 
+ /:::/    /             \:::\|::|/:::/    /                /:::/    /  
+/:::/    /               \::::::::::/    /                /:::/    /   
+\::/    /                 \::::::::/    /                /:::/    /    
+ \/____/                   \::::::/    /                /:::/    /     
+                            \::::/____/                /:::/    /      
+                             |::|    |                /:::/    /       
+                             |::|____|                \::/    /        
+                              ~~                       \/____/         
+	**TQM端专用主页**
+	By：AISophon
+	维护：AISophon
+	地址：https://github.com/AISophon
+	协议：GPLv3
+-->
+
+<!-- TQM服务器专用端主页由AISophon制作与维护。 -->
+<!-- 
+<Border Margin="0,0,0,30" Padding="2,8" BorderThickness="1" Background="{DynamicResource ColorBrush5}" CornerRadius="5" VerticalAlignment="Top" BorderBrush="{DynamicResource ColorBrush3}" Opacity="0.7">
+  <Grid Margin="10,0,0,0">
+    <TextBlock x:Name="NewsHint" FontWeight="Bold" FontSize="12" VerticalAlignment="Center" Foreground="#FF000000">
+            TQM服务器专用端主页由AISophon制作与维护。
+</TextBlock>
+    </Grid>
+</Border>
+ -->
+
+<!-- 常用功能板块，共4个MyCard -->
+<Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/> <!-- 左侧"快速启动"MyCard列 -->
+        <ColumnDefinition Width="13"/> <!-- "快速启动"和其它MyCard之间的间距 -->
+        <ColumnDefinition Width="*"/> <!-- 其它MyCard列 -->
+    </Grid.ColumnDefinitions>
+
+    <!-- 左侧"快速启动"MyCard列 -->
+    <local:MyCard Grid.Column="0" Title="快速启动" CanSwap="True" IsSwaped="False" Width="190">
+        <StackPanel Margin="25,40,23,15">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+                <local:MyButton Margin="0,0,0,0" Width="140" Height="35" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Red"
+                            Text="复制登录密码" EventType="复制文本" EventData="/login 114514" />
+
+<!-- 这里密码记得修改 -->
+            </StackPanel>
+            <Grid Margin="0,10,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush5}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="0" />
+                <TextBlock Text="启 动 游 戏" HorizontalAlignment="Center" FontSize="14" Foreground="{DynamicResource ColorBrush5}" Grid.Column="1" VerticalAlignment="Center" />
+                <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush5}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="2" />
+            </Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <local:MyButton Margin="0,0,0,0" Width="140" Height="35" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
+                       Text="TQM 主要线路" EventType="启动游戏" EventData="1.14.5|127.0.0.1" ToolTip="服务器ip：127.0.0.1" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <local:MyButton Margin="0,0,0,0" Width="140" Height="35" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
+                       Text="TQM ipv6线路" EventType="启动游戏" EventData="1.14.5|127.0.0.1" ToolTip="服务器ip：127.0.0.1" />
+            </StackPanel>
+            <Grid Margin="0,15,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush5}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="0" />
+                <TextBlock Text="开 启 网 页" HorizontalAlignment="Center" FontSize="14" Foreground="{DynamicResource ColorBrush5}" Grid.Column="1" VerticalAlignment="Center" />
+                <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush5}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="2" />
+            </Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+            <local:MyButton Margin="0,0,0,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+                   Text="服务器食用说明" EventType="打开网页" EventData="https://docs.qq.com/doc/DZm9FZWlJWk9aaXls" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <local:MyButton Margin="0,0,0,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+                   Text="服务器官网地图" EventType="打开网页" EventData="http://map.tqmcraft.net:8123" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <local:MyButton Margin="0,0,0,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+                            Text="打开帮助页面(暂无)" EventType="打开帮助" EventData="Help/list.json"/>
+            </StackPanel>
+        </StackPanel>
+    </local:MyCard>
+
+    <!-- 其它MyCard列 -->
+    <Grid Grid.Column="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/><!-- "网站跳转"MyCard -->
+            <RowDefinition Height="5"/><!-- "网站跳转"和"高速下载器"MyCrad空行 -->
+            <RowDefinition Height="5"/><!-- 玄学问题：Grid.Row="2"无法响应，别删 -->
+            <RowDefinition Height="*"/><!-- "高速下载器"MyCard -->
+            <RowDefinition Height="10"/><!-- "高速下载器" 和"百宝箱"MyCrad空行 -->
+            <RowDefinition Height="*"/><!-- "百宝箱"MyCard -->
+        </Grid.RowDefinitions>
+        
+        <local:MyCard Grid.Row="0" Title="网站跳转" Margin="0,0,0,0" CanSwap="True" IsSwaped="False">
+            <StackPanel Margin="25,40,23,15">
+                <local:MyListItem  Margin="-5,1,-5,1" Logo="{path}PCL\Photo\Custom\website\bilibili.png" Title="bilibili" Info="哔哩哔哩 (゜-゜)つロ 干杯~-bilibili" EventType="打开网页" EventData="https://www.bilibili.com/" Type="Clickable" />
+                <local:MyListItem  Margin="-5,1,-5,1" Logo="{path}PCL\Photo\Custom\website\bing.png" Title="必应" Info="Microsoft Bing" EventType="打开网页" EventData="https://www.bing.com/" Type="Clickable" />
+                <local:MyListItem  Margin="-5,1,-5,1" Logo="{path}PCL\Photo\Custom\website\zhihu.png" Title="知乎" Info="知乎 - 有问题，就会有答案" EventType="打开网页" EventData="https://www.zhihu.com/" Type="Clickable" />
+                <local:MyListItem  Margin="-5,1,-5,1" Logo="{path}PCL\Photo\Custom\website\mcmod.png" Title="MC百科" Info="最大的Minecraft中文MOD百科" EventType="打开网页" EventData="https://www.mcmod.cn/" Type="Clickable" />
+                <local:MyListItem  Margin="-5,1,-5,1" Logo="{path}PCL\Photo\Custom\website\minecraft_wiki.png" Title="Minecraft Wiki" Info="中文 Minecraft Wiki" EventType="打开网页" EventData="https://zh.minecraft.wiki/" Type="Clickable" />
+            </StackPanel>
+        </local:MyCard>
+
+        <local:MyCard Grid.Row="3" Title="高速下载器" Margin="0,0,0,0" CanSwap="True" IsSwaped="True">
+            <StackPanel Margin="25,40,23,15">
+                <local:MyHint Text="必须为以http://或https://开头的网址。不支持其他乱七八糟的协议（如百度网盘）" />
+                <StackPanel Orientation="Horizontal" Height="80">
+                    <TextBlock Text="下载链接：" VerticalAlignment="Center" />
+                    <local:MyTextBox Margin="3" Name="web" Height="30" Width="300" />
+                    <local:MyButton EventType="下载文件" EventData="{Binding ElementName=web, Path=Text}" Text="开始下载" Margin="0,0,0,0" Width="140" Height="35" HorizontalAlignment="Right" Padding="13,0,13,0" ColorType="Highlight"/>
+                </StackPanel>
+            </StackPanel>
+        </local:MyCard>
+
+        <local:MyCard Grid.Row="5" Title="百宝箱" Margin="0,0,0,0" CanSwap="True" IsSwaped="True">
+            <StackPanel Margin="25,40,23,15">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
+                                Text="今日人品" EventType="今日人品" />
+                    <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
+                                Text="清理垃圾" EventType="清理垃圾" />
+                    <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="red" Text="千万别点" EventType="打开网页" EventData="https://www.bilibili.com/video/BV1GJ411x7h7" ToolTip="你被骗了！" />
+                </StackPanel>
+            </StackPanel>
+        </local:MyCard>
+
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Background="Transparent"/>
+    </Grid>
+
+    <Border Grid.Column="1" Background="Transparent"/>
+</Grid>
+
+<!-- 声明 -->
+<Border Background="#CCFFFFFF" Height="160" Margin="-25,30,-25,-10" BorderThickness="0,2,0,0" BorderBrush="#AAAAAAAA">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="0,20,20,0">
+            <TextBlock Text="  TQM专用端" FontSize="16" Margin="0,5,5,5" />
+            <TextBlock Text="  " />
+            <TextBlock Text="  Author: AISophon" />
+
+            <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                <TextBlock Text="  Github:  " />
+                <local:MyTextButton Text="https://github.com/AISophon/" ToolTip="点击打开Github" EventType="打开网页" EventData="https://github.com/AISophon/"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="  无特殊声明本主页采用 " />
+                <local:MyTextButton Text="GPLv3" EventType="打开网页" EventData="https://www.gnu.org/licenses/" />
+                <TextBlock Text=" 授权。" />
+            </StackPanel>
+        </StackPanel>
+
+        <Image Grid.Column="1" Height="100" HorizontalAlignment="Center" 
+               Source="{path}PCL\Photo\Custom\TQM.png" />
+    </Grid>
+</Border>
